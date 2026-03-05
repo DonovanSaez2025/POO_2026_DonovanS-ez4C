@@ -27,6 +27,7 @@ header {
     margin: 0 auto;
 }
 
+/* Propiedades de las filas */
 .row {
     display: flex;
     justify-content: center;
@@ -48,11 +49,13 @@ header {
     border-radius: 10px;
 }
 
+/* Propiedades de span */
 .tarjeta span {
     font-size: 16px;
     max-width: 150px;
 }
 
+/* Propiedades de los botones en las tarjetas */
 .tarjetaboton {
     font-size: 16px;
     padding: 6px 9px;
@@ -64,6 +67,7 @@ header {
     transition: background-color 0.2s;
 }
 
+/* Propiedades de los botones en las tarjetas al pasar el cursor encima */
 .tarjetaboton:hover {
     background-color: #537d83;
     transition: background-color 0.2s;

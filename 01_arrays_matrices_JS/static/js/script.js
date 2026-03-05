@@ -130,7 +130,7 @@ function consultorioMedico() {
     let atendiendo = [pacientes.shift()];
     atendiendo.shift();
     atendiendo.unshift("Sonia");
-    alert(`Pacientes en espera: ${pacientes.join(", ")}\nAtendiendo ahora: ${atendiendo}`);
+    alert(`Pacientes en espera: ${pacientes.join(", ")}\nSiguiente: ${pacientes[0]}`);
 };
 
 // Ejercicio 10:  Extracción de Profundidad (Matriz 3x3x3)
