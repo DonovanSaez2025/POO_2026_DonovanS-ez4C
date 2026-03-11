@@ -39,28 +39,22 @@ Declara una variable nuevoProducto.
 - Si el producto no está en la lista (usa .includes()), agrégalo al final y muestra la lista completa.
 - Si ya existe, muestra: "El producto ya está en el inventario".*/
 let productos = ["celular", "teclado", "mouse"];
-let filtro = false;
 
 function filtroDuplicado() {
     let nuevoProducto = prompt("Ingrese un nuevo producto: ");
     nuevoProducto = nuevoProducto.trim();
-    for (let i = 0; i < productos.length; i++) {
-        if (nuevoProducto.includes(productos[i])) {
-            filtro = true;
-        };
-    };
+
     if (nuevoProducto == "") {
         alert(INVALIDO);
-    } else if (filtro === false) {
+    } else if (productos.includes(nuevoProducto)) {
+        alert("El producto ya está en el inventario.");
+    } else {
         productos.push(nuevoProducto);
         alert(`El producto fue agregado correctamente.`);
         alert(`Lista de productos: ${productos.join(", ")}`);
-    } else {
-        alert("El producto ya está en el inventario.");
     };
-
-    filtro = false;
 };
+
 // Ejercicio 04: Control de Stock Máximo
 /* Imagina que una bodega solo tiene espacio para 5 cajas.
 let bodega = ["caja1", "caja2", "caja3", "caja4", "caja5", "caja6"];
@@ -177,9 +171,65 @@ Crea una variable persona.
 - Si no está, muestra: "Lo siento, no estás en la lista de invitados".
 */
 let invitados = ["Ana", "Luis", "Camila", "Diego"];
-let detector = false;
 
 function buscadorInvitados() {
     let persona = prompt("Ingresa tu nombre: ");
 
+    if (invitados.includes(persona)) {
+        alert(`¡Bienvenido/a ${persona}! Pasa a la fiesta`);
+    } else {
+        alert("Lo siento, no estás en la lista de invitados");
+    };
+};
+
+// Ejercicio 09: El Almacén de Matrices (2D Arrays)
+/*Imagina una estantería con dos niveles (una matriz):
+let estanteria = [ ["Manzanas", "Peras"], ["Leche", "Yogur"] ];
+- Crea una variable seccion (0 o 1) y una variable producto.
+- Accede a la sección elegida. Si el producto solicitado está en esa sub-lista, muestra: "Producto encontrado en el estante".
+- Si no, muestra: "No tenemos ese producto en esa sección".*/
+let estanteria = [["Manzanas", "Peras"] , ["Leche", "Yogur"]];
+
+function almacenMatrices() {
+    let seccion = parseInt(prompt(`Sección 0: ${estanteria[0]} || Sección 1: ${estanteria[1]}\nSelecciona una sección del estante`));
+    let producto = prompt("Solicita un producto: ");
+    producto = producto.trim();
+
+    if (isNaN(seccion) || seccion > 1 && seccion < 0 || producto == "") {
+        alert(INVALIDO);
+    } else if (estanteria[seccion].includes(producto)) {
+        alert(`${producto} se encuentra en la sección ${seccion} del estante.`);
+    } else {
+        alert(`${producto} no se encuentra en la sección ${seccion} del estante.`)
+    };
+};
+
+// Ejercicio 10: Registro Maestro de Visitas
+/*Crea un arreglo vacío llamado bitacora.
+Declara las variables nombreVisita y esVip (booleano).
+- Si el nombre está vacío: Mostrar error.
+- Si el nombre existe y esVip es true: Agregarlo al inicio con .unshift().
+- Si el nombre existe y esVip es false: Agregarlo al final con .push().
+- Al final, muestra cuántas personas hay en total usando .length.*/
+let bitacora = [];
+
+function maestroVisitas() {
+    let nombreVisita = prompt("Ingresa tu nombre: ");
+    let esVip = prompt(`¿Eres VIP?\nResponde solo "si" o "no"`);
+    nombreVisita = nombreVisita.trim();
+    esVip = esVip.trim();
+
+    if (nombreVisita == "") {
+        alert(INVALIDO);
+    } else if (bitacora.includes(nombreVisita)) {
+        alert("Esa persona ya está en la lista");
+    } else if (esVip == "si") {
+        bitacora.unshift(nombreVisita);
+        alert(`Has sido agregado a la lista\nLista: ${bitacora.join(", ")}\n Personas en total: ${bitacora.length}`);
+    } else if (esVip == "no") {
+        bitacora.push(nombreVisita);
+        alert(`Has sido agregado a la lista\nLista: ${bitacora.join(", ")}\n Personas en total: ${bitacora.length}`);
+    } else {
+        alert(INVALIDO);
+    };
 };
