@@ -132,8 +132,54 @@ function limpiezaDatos() {
 Declara la variable rol.
 - Si el rol es "Admin", agrega el nombre al inicio de la lista con .unshift() para que tenga prioridad.
 - Si no es Admin, agrégalo al final con .push().*/
-let foto = ["User1", "User2"];
+let foro = ["User1", "User2"];
 
 function accesoVip() {
-    
-}
+    let username = prompt("Ingresa tu nombre de usuario: ");
+    let rol = prompt(`Ingresa tu rol:\nAdmin, Usuario`).toLowerCase();
+    username = username.trim();
+    rol = rol.trim();
+
+    if (username == "" || rol == "") {
+        alert(INVALIDO)
+    } else if (rol == "admin") {
+        foro.unshift(username);
+        alert(`Admin agregado correctamente\n${foro.join(", ")}`)
+    } else if (rol != "admin") {
+        foro.push(username);
+        alert(`Usuario agregado correctamente\n${foro.join(", ")}`);
+    };
+};
+
+// Ejercicio 07: Sistema de Calificaciones Chile (Escala 1 a 7)
+/*Crea una variable nota.
+- Si la nota es 6 o superior: "Excelente, eximido".
+- Si la nota es entre 4 y 5.9: "Aprobado, vas a examen".
+- Si es menor a 4: "Reprobado".
+*/
+function calificacionesChile() {
+    let nota = parseFloat(prompt("Ingresa una nota según el sistema chileno: "));
+    if (nota >= 6 && nota < 7.1) {
+        alert("Excelente, eximido.");
+    } else if (nota >= 4 && nota < 6) {
+        alert("Aprobado, vas a examen.");
+    } else if (nota < 4 && nota >= 1) {
+        alert("Reprobado.");
+    } else {
+        alert(INVALIDO)
+    }
+};
+
+// Ejercicio 08: Buscador de Invitados
+/* let invitados = ["Ana", "Luis", "Camila", "Diego"];
+Crea una variable persona.
+- Si la persona está en la lista, muestra: "¡Bienvenido/a [nombre]! Pasa a la fiesta".
+- Si no está, muestra: "Lo siento, no estás en la lista de invitados".
+*/
+let invitados = ["Ana", "Luis", "Camila", "Diego"];
+let detector = false;
+
+function buscadorInvitados() {
+    let persona = prompt("Ingresa tu nombre: ");
+
+};
