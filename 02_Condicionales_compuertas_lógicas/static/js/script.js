@@ -49,13 +49,91 @@ function filtroDuplicado() {
             filtro = true;
         };
     };
-    if (filtro === false) {
+    if (nuevoProducto == "") {
+        alert(INVALIDO);
+    } else if (filtro === false) {
         productos.push(nuevoProducto);
         alert(`El producto fue agregado correctamente.`);
+        alert(`Lista de productos: ${productos.join(", ")}`);
     } else {
         alert("El producto ya está en el inventario.");
     };
 
     filtro = false;
-    alert(`Lista de productos: ${productos.join(", ")}`);
 };
+// Ejercicio 04: Control de Stock Máximo
+/* Imagina que una bodega solo tiene espacio para 5 cajas.
+let bodega = ["caja1", "caja2", "caja3", "caja4", "caja5", "caja6"];
+- Si el tamaño de la bodega (.length) es mayor a 5, elimina la última caja con .pop() y muestra: "Bodega llena, eliminando último ingreso".
+- Si es 5 o menos, muestra: "Espacio disponible"*/
+let bodega = ["caja1", "caja2", "caja3", "caja4", "caja5", "caja6"];
+
+function stockQuitar() {
+    if (bodega.length > 2 || bodega.length == 1) {
+        bodega.pop();
+        alert(`Caja quitada correctamente, hay un total de ${bodega.length} cajas`);
+    } else if (bodega.length == 2) {
+        bodega.pop();
+        alert(`Caja quitada correctamente, hay un total de ${bodega.length} caja`);
+    } else if (bodega.length == 0) {
+        alert("La bodega está vacía.")
+    };
+};
+
+function controlStock() {
+    if (bodega.length > 5) {
+        alert("Bodega llena, retirando cajas sobrantes.")
+        for (let i = 0; bodega.length > 5; i++) {
+            bodega.pop();
+        };
+    } else if (bodega.length > 1 && bodega.length != 5 || bodega.length == 0) {
+        alert(`Hay ${bodega.length} cajas en la bodega. Espacio disponible`);
+    } else if (bodega.length == 1) {
+        alert(`Hay ${bodega.length} caja en la bodega. Espacio disponible`);
+    } else if (bodega.length == 5) {
+        alert(`Hay ${bodega.length} caja en la bodega. La bodega está llena.`);
+    };
+};
+
+function stockAgregar() {
+    if (bodega.length < 5 && bodega.length != 0) {
+        bodega.push(`caja${bodega.length + 1}`);
+        alert(`Caja añadida correctamente, hay un total de ${bodega.length} cajas`);
+    } else if (bodega.length == 0) {
+        bodega.push(`caja${bodega.length + 1}`);
+        alert(`Caja añadida correctamente, hay un total de ${bodega.length} caja`);
+    } else if (bodega.length >= 5) {
+        alert("La bodega está llena, no pueden añadirse más cajas.");
+    };
+};
+
+// Ejercicio 05: Limpieza de Datos
+/*A veces recibimos datos basura. let colaEspera = ["error_404", "Juan", "Sofía"];
+- Si el primer elemento (índice 0) es igual a "error_404", elimínalo usando .shift() y muestra la cola limpia.
+- Si no, muestra: "La lista de espera está correcta".
+*/
+let colaEspera = ["error_404", "Juan", "Sofía"];
+
+function limpiezaDatos() {
+    if (colaEspera[0] == "error_404") {
+        alert(`${colaEspera[0]} es un dato basura, eliminando de la lista.`)
+        colaEspera.shift();
+        alert(`Cola de espera limpia: ${colaEspera.join(", ")}`);
+    } else if (colaEspera[0] != "error_404") {
+        alert(`${colaEspera[0]} es un dato válido, devolviendo al inicio de la cola.`);
+        colaEspera.push(colaEspera[0]);
+        colaEspera.shift();
+        alert(`Cola de espera: ${colaEspera.join(", ")}`);
+    };
+};
+
+// Ejercicio 06: Acceso VIP
+/*Tienes una lista de usuarios comunes: let foro = ["User1", "User2"];
+Declara la variable rol.
+- Si el rol es "Admin", agrega el nombre al inicio de la lista con .unshift() para que tenga prioridad.
+- Si no es Admin, agrégalo al final con .push().*/
+let foto = ["User1", "User2"];
+
+function accesoVip() {
+    
+}
