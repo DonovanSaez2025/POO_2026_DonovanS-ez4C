@@ -24,7 +24,9 @@ let usuarios = []; // Array que guardará cada nombre de los usuarios
 function validadorNombres() {
     let nombre = prompt("Ingrese el nombre de usuarios");
     nombre = nombre.trim(); // Elimina los espacios antes y después del texto.
-    if (nombre != "") {
+    if (usuarios.includes(nombre)) {
+        alert("Ese usuario ya está en la lista.")
+    } else if (nombre != "") {
         usuarios.push(nombre);
         alert(`${nombre} ha sido agregado correctamente.`);
         alert(`Usuarios agregados: ${usuarios.join(", ")}`);
@@ -188,7 +190,7 @@ let estanteria = [ ["Manzanas", "Peras"], ["Leche", "Yogur"] ];
 - Crea una variable seccion (0 o 1) y una variable producto.
 - Accede a la sección elegida. Si el producto solicitado está en esa sub-lista, muestra: "Producto encontrado en el estante".
 - Si no, muestra: "No tenemos ese producto en esa sección".*/
-let estanteria = [["Manzanas", "Peras"] , ["Leche", "Yogur"]];
+let estanteria = [["Manzanas", "Peras"], ["Leche", "Yogur"]];
 
 function almacenMatrices() {
     let seccion = parseInt(prompt(`Sección 0: ${estanteria[0]} || Sección 1: ${estanteria[1]}\nSelecciona una sección del estante`));
@@ -215,18 +217,17 @@ let bitacora = [];
 
 function maestroVisitas() {
     let nombreVisita = prompt("Ingresa tu nombre: ");
-    let esVip = prompt(`¿Eres VIP?\nResponde solo "si" o "no"`);
+    let esVip = parseInt(prompt(`¿Eres VIP?\n0 = no\n1 = si`));
     nombreVisita = nombreVisita.trim();
-    esVip = esVip.trim();
 
     if (nombreVisita == "") {
         alert(INVALIDO);
     } else if (bitacora.includes(nombreVisita)) {
         alert("Esa persona ya está en la lista");
-    } else if (esVip == "si") {
+    } else if (esVip == 1) {
         bitacora.unshift(nombreVisita);
         alert(`Has sido agregado a la lista\nLista: ${bitacora.join(", ")}\n Personas en total: ${bitacora.length}`);
-    } else if (esVip == "no") {
+    } else if (esVip == 0) {
         bitacora.push(nombreVisita);
         alert(`Has sido agregado a la lista\nLista: ${bitacora.join(", ")}\n Personas en total: ${bitacora.length}`);
     } else {
