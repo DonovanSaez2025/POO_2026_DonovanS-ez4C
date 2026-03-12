@@ -32,8 +32,9 @@ section {
     margin-bottom: 50px;
 }
 
-/* Propiedad de h2 */
+/* Propiedades de h2 */
 h2 {
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
@@ -43,6 +44,7 @@ h2 {
     justify-content: center;
 }
 
+/* Propiedades de la clase ejercicio */
 .ejercicio {
     display: flex;
     flex-direction: column;
@@ -51,7 +53,31 @@ h2 {
     margin: 20px 0 10px 0;
 }
 
+/* Propiedades para hacer desaparecer elementos */
 .desaparece {
-    font-size: 0px;
-    max-width: 0px;
+    display: none;
+}
+
+/* Propiedades del fondo de los resultados */
+.resultadoFondo {
+    background-color: #7c7c82;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    margin-top: 3px;
+    line-height: 22px;;
+}
+
+.ejercicio button {
+    padding: 6px;
+    border-radius: 15px;
+    background-color: #007f06;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s background-color;
+}
+
+.ejercicio button:hover {
+    background-color: #7f0000;
+    transition: 0.2s background-color;
 }
