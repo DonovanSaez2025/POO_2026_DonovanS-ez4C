@@ -68,6 +68,7 @@ h2 {
     line-height: 22px;;
 }
 
+/* Propiedades de los botones de los ejercicios */
 .ejercicio button {
     padding: 6px;
     border-radius: 15px;
@@ -77,6 +78,7 @@ h2 {
     transition: 0.2s background-color;
 }
 
+/* Propiedades de los botones de los ejercicios al pasar el cursor encima */
 .ejercicio button:hover {
     background-color: #7f0000;
     transition: 0.2s background-color;
