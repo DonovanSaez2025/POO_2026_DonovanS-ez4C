@@ -1,0 +1,74 @@
+/* Resetear estilos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Propiedades de body */
+body {
+    font-family: sans-serif;
+    background-color: #535483;
+    color: #fff;
+    text-align: center;
+}
+
+/* Propiedades de header */
+header {
+    padding: 10px;
+    background-color: #835353;
+    border-bottom: 2px solid #000;
+    margin-bottom: 12px;
+}
+
+/* Propiedades del contenedor */
+.contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Propiedades de las filas */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* Propiedades de las tarjetas */
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    gap: 10px;
+    background-color: #ebebeb;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+/* Propiedades de span */
+.tarjeta span {
+    font-size: 16px;
+    max-width: 150px;
+}
+
+/* Propiedades de los botones en las tarjetas */
+.tarjetaboton {
+    font-size: 16px;
+    padding: 6px 9px;
+    border: 2px solid #000;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #837e53;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Propiedades de los botones en las tarjetas al pasar el cursor encima */
+.tarjetaboton:hover {
+    background-color: #537d83;
+    transition: background-color 0.2s;
+}

@@ -9,13 +9,13 @@
     <!-- Vinculo CSS -->
     <link rel="stylesheet" href="static/css/style.css">
     <!-- Título de la página -->
-    <title>Arrays y matrices</title>
+    <title>Funciones JS</title>
 </head>
 
 <body>
     <!-- Cabecera -->
     <header>
-        <h1>Arrays y Matrices</h1>
+        <h1>Funciones JS</h1>
     </header>
 
     <!-- Contenedor de la página -->
@@ -27,14 +27,20 @@
                 <!-- Tarjeta 1 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 01: </h2>
-                    <span>El Mensaje Desordenado (Push y Pop)</span>
-                    <button class="tarjetaboton" onclick="construirFrase()">Ejecutar</button>
+                    <span>Lista de Asistencia</span>
+                    <input id="input1" type="text" placeholder="Ingresa el nombre del alumno">
+                    <button class="tarjetaboton" onclick="registrarAlumno()">Ejecutar</button>
+                    <div class="escondido" id="resultadoContenedor1">
+                        <span>Alumnos presentes:</span>
+                        <div class="resultado fondo" id="resultado1"></div>
+                    </div>
                 </div>
 
                 <!-- Tarjeta 2 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 02: </h2>
                     <span>Gestión de Fila de Espera (Shift y Unshift)</span>
+                    <input id="input2" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="filaEspera()">Ejecutar</button>
                 </div>
 
@@ -42,6 +48,7 @@
                 <div class="tarjeta">
                     <h2>Ejercicio 03: </h2>
                     <span>Reordenando Números (Lógica de Índices)</span>
+                    <input id="input3" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="reordenaNumeros()">Ejecutar</button>
                 </div>
             </div>
@@ -52,21 +59,27 @@
                 <div class="tarjeta">
                     <h2>Ejercicio 04: </h2>
                     <span>Coordenadas en la Matriz (Suma Simple)</span>
+                    <input id="input4" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="coordenadaMatriz()">Ejecutar</button>
+                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
                 </div>
 
                 <!-- Tarjeta 5 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 05: </h2>
                     <span>El Intruso en la Tercera Dimensión</span>
+                    <input id="input5" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="intrusoDimension()">Ejecutar</button>
+                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
                 </div>
 
                 <!-- Tarjeta 6 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 06: </h2>
                     <span>Traductor de Acciones (Matriz + Arreglo)</span>
+                    <input id="input6" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="traductorAccion()">Ejecutar</button>
+                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
                 </div>
             </div>
 
@@ -76,21 +89,27 @@
                 <div class="tarjeta">
                     <h2>Ejercicio 07: </h2>
                     <span>Limpieza de Datos (Pop y Unshift)</span>
+                    <input id="input7" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="limpiezaDatos()">Ejecutar</button>
+                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
                 </div>
 
                 <!-- Tarjeta 8 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 08: </h2>
                     <span>La Matriz de Identidad Modificada</span>
+                    <input id="input8" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="identidadModificada()">Ejecutar</button>
+                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
                 </div>
 
                 <!-- Tarjeta 9 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 09: </h2>
                     <span>El Consultorio Médico (Complejo)</span>
+                    <input id="input9" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="consultorioMedico()">Ejecutar</button>
+                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
                 </div>
             </div>
 
@@ -100,7 +119,9 @@
                 <div class="tarjeta">
                     <h2>Ejercicio 10:</h2>
                     <span>Extracción de Profundidad (Matriz 3x3x3)</span>
+                    <input id="input10" placeholder="Ingresa texto">
                     <button class="tarjetaboton" onclick="extraccionProfundidad()">Ejecutar</button>
+                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
                 </div>
             </div>
         </section>
