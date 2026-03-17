@@ -153,6 +153,7 @@ function generadorAdvertencia() {
     let temperaturas = [22, 24, 28, 35, 21, 38];
     const resultadoContenedor8 = document.getElementById("resultadoContenedor8");
     const resultado8 = document.getElementById("resultado8");
+    resultado8.textContent = "";
 
     for (let i = 0; i < temperaturas.length; i++) {
         if (temperaturas[i] > 30) {
@@ -161,4 +162,4 @@ function generadorAdvertencia() {
     };
 
     resultadoContenedor8.classList.remove("desaparece");
-}
+};
