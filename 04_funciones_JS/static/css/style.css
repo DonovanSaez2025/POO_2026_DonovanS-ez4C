@@ -72,3 +72,7 @@ header {
     background-color: #537d83;
     transition: background-color 0.2s;
 }
+
+.escondido {
+    display: none;
+}
