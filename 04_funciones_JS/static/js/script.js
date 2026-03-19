@@ -200,8 +200,10 @@ function filtrarPrecios() {
     const input = document.getElementById("input6");
     input.value = input.value.trim();
     let num = parseInt(input.value);
-    if (input.value == "") {
+    console.log(num)
+    if (num == "" || isNaN(num)) {
         alert("No puede estar vacío.");
+        input.value = "";
     } else {
         let resultado = verificarPrecio(num);
         input.value = "";
