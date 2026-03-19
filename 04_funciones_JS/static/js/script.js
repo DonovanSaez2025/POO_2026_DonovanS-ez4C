@@ -1,5 +1,5 @@
 console.log("Conectado a JS...");
-const INVALIDO = "El nombre no puede estar vacío.";
+const INVALIDO = "Ingresa valoras válidos.";
 
 /* Ejercicio 1: Lista de Asistencia (push)
 Contexto: Eres el profesor y estás pasando la lista. Cada alumno que dice "presente" debe ser anotado al final del registro.
@@ -20,7 +20,7 @@ function registrarAlumno() {
     const resultado1 = document.getElementById("resultado1");
     const input = document.getElementById("input1");
     if (input.value == "") {
-        alert(INVALIDO);
+        alert("El nombre no puede estar vacío");
     } else {
         let nombre = input.value;
         let resultado = agregarLista(nombre);
@@ -51,7 +51,7 @@ function ingresarUrgencia() {
     const resultado1 = document.getElementById("resultado2");
     const input = document.getElementById("input2");
     if (input.value == "") {
-        alert(INVALIDO);
+        alert("El nombre no puede estar vacío");
     } else {
         let nombre = input.value;
         let resultado = agregarUrgencia(nombre);
@@ -82,7 +82,7 @@ function actualizarPedido(pedido) {
         entregas.pop();
         alert("Entrega cancelada con éxito");
     } else {
-        alert("Ingresa valores válidos.");
+        alert(INVALIDO);
     };
 
     return entregas.join(", ");
@@ -124,7 +124,7 @@ function verificarCodigo() {
     const input = document.getElementById("input4");
     input.value = input.value.trim();
     if (input.value == "") {
-        alert("No puede estar vacío");
+        alert(INVALIDO);
     } else {
         let resultado = verificacionDelCodigo(input.value);
         input.value = "";
@@ -157,7 +157,7 @@ function simularCuotas() {
     const input = document.getElementById("input5");
     input.value = input.value.trim();
     if (input.value == "") {
-        alert("No puede estar vacío.")
+        alert(INVALIDO)
     } else {
         let resultado = cicloCuotas(input.value);
         input.value = "";
@@ -187,7 +187,7 @@ function verificarPrecio(presupuesto) {
     };
     if (disponibles.length == 0) {
         opciones = "No te alcanza para nada.";
-        return opciones
+        return opciones;
     } else {
         opciones = "Te alcanza para los precios: ";
         return opciones + disponibles.join(" - ");
@@ -200,14 +200,84 @@ function filtrarPrecios() {
     const input = document.getElementById("input6");
     input.value = input.value.trim();
     let num = parseInt(input.value);
-    console.log(num)
+
     if (num == "" || isNaN(num)) {
-        alert("No puede estar vacío.");
+        alert(INVALIDO);
         input.value = "";
     } else {
         let resultado = verificarPrecio(num);
         input.value = "";
         contenedor.classList.remove("escondido");
         resultado1.textContent = resultado;
+        disponibles = [];
+    };
+};
+
+/*Ejercicio 7: Cálculo de Sueldo Líquido (Una función llama a otra)
+Contexto: El usuario ingresa su Sueldo Bruto. Una función matemática oculta descuenta el 20% (AFP y Salud)
+y le devuelve el dato a la pantalla para mostrar cuánto dinero real recibirá a fin de mes.
+- Función Ayudante (La Matemática): Crea una función calcularDescuentos(bruto). Esta función multiplica
+el bruto por 0.8 y usa return para devolver el resultado.
+- Función Principal (La Interfaz): Crea procesarSueldo(). (Esta va en el botón).
+- Captura el sueldo desde el input y conviértelo a número.
+- Dentro de procesarSueldo, llama a tu función calcularDescuentos() pasándole el número capturado,
+y guarda lo que te devuelve en una variable llamada sueldoLiquido.
+- Modifica el textContent del párrafo: "Tu sueldo a pago es: $" + sueldoLiquido.
+- Limpia el input.*/
+function calcularDescuentos(bruto) {
+    let liquidandoSueldo = bruto * 0.8;
+    return liquidandoSueldo.toFixed(2);
+};
+
+function procesarSueldo() {
+    const contenedor = document.getElementById("resultadoContenedor7");
+    const resultado1 = document.getElementById("resultado7");
+    const input = document.getElementById("input7");
+    input.value = input.value.trim();
+    let sueldo = parseFloat(input.value);
+
+    if (sueldo == "" || isNaN(sueldo)) {
+        alert(INVALIDO);
+        input.value = "";
+    } else {
+        let sueldoLiquido = calcularDescuentos(sueldo);
+        input.value = "";
+        contenedor.classList.remove("escondido");
+        resultado1.textContent = `Tu sueldo a pagar es: $${sueldoLiquido}`;
+    };
+};
+
+/*Ejercicio 8: El Carrito de Compras (Reto Final - Delegación de tareas)
+Contexto: Vamos agregando productos al carrito. Una función anota el producto y
+le pide ayuda a otra función para que dibuje el carrito actualizado en la pantalla.
+- Crea un arreglo vacío: let carrito = [];
+- Función Ayudante (La Pantalla): Crea actualizarPantalla(). Esta función tomará el arreglo carrito,
+lo unirá en un texto (ej: carrito.join(" - ")) y lo inyectará en el textContent del párrafo.
+- Función Principal (La Lógica): Crea agregarAlCarrito(). (Esta va en el botón).
+- Captura el producto desde el input.
+- Si el input no está vacío, usa .push() para agregarlo al carrito.
+- ¡Limpia el input!
+- Al final de esta función, llama a actualizarPantalla() para que la vista se refresque automáticamente
+con el nuevo producto.*/
+let carrito = [];
+function actualizarPantalla() {
+    const contenedor = document.getElementById("resultadoContenedor8");
+    const resultado1 = document.getElementById("resultado8");
+    let carritoMostrar = carrito.join(", ");
+    contenedor.classList.remove("escondido");
+    resultado1.textContent = `Carrito: ${carritoMostrar}`;
+}
+
+function agregarAlCarrito() {
+    const input = document.getElementById("input8");
+    input.value = input.value.trim();
+
+    if (input.value !== "") {
+        carrito.push(input.value);
+        alert("Producto agregado al carro.");
+        input.value = "";
+        actualizarPantalla();
+    } else {
+        alert(INVALIDO);
     };
 };
