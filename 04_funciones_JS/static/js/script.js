@@ -61,3 +61,151 @@ function ingresarUrgencia() {
         alert("Alumno enlistado correctamente.");
     };
 };
+
+/* Ejercicio 3: Sistema de Delivery
+Contexto: Un restaurante tiene pedidos listos. El cajero puede despachar el pedido más antiguo, o cancelar el último pedido que entró por un error.
+- Crea un arreglo: let entregas = ["Pizza", "Sushi", "Hamburguesa", "Ensalada"];
+- Función Principal: Crea gestionarPedidos().
+- Captura el texto del input. El usuario debe escribir la palabra "despachar" o "cancelar".
+- Usa un if. Si escribió "despachar", usa .shift() para sacar la primera comida de la lista.
+- Usa un else if. Si escribió "cancelar", usa .pop() para eliminar la última comida de la lista.
+- Muestra en el textContent: "Pedidos pendientes: " seguido del arreglo.
+- Limpia el input.*/
+const resultado1 = document.getElementById("resultado3");
+let entregas = ["Pizza", "Sushi", "Hamburguesa", "Ensalada"];
+resultado1.textContent = entregas.join(", ");
+function actualizarPedido(pedido) {
+    if (pedido === "despachar") {
+        entregas.shift();
+        alert("Entrega despachada con éxito.");
+    } else if (pedido === "cancelar") {
+        entregas.pop();
+        alert("Entrega cancelada con éxito");
+    } else {
+        alert("Ingresa valores válidos.");
+    };
+
+    return entregas.join(", ");
+}
+
+function gestionarPedidos() {
+    const input = document.getElementById("input3");
+    input.value = input.value.trim();
+    input.value = input.value.toLowerCase();
+    let resultado = actualizarPedido(input.value);
+    input.value = "";
+    resultado1.textContent = resultado;
+};
+
+/*Ejercicio 4: Validador de Códigos de Descuento
+Contexto: Una tienda online revisa si el código promocional que ingresó el cliente existe en su base de datos para aplicarle una rebaja.
+- Crea un arreglo: let codigosValidos = ["VERANO2026", "PROMO50", "CLIENTEVIP"];
+- Función Principal: Crea verificarCodigo().
+- Captura el código desde el input.
+- Crea una variable mensaje = "Código inválido o expirado";.
+- Recorre el arreglo con un ciclo for.
+- Si el elemento actual del ciclo es igual al texto del input, cambia la variable mensaje a "¡Éxito! Código aceptado".
+- Fuera del ciclo, inyecta la variable mensaje en el textContent del párrafo.
+- Limpia el input.*/
+let codigosValidos = ["VERANO2026", "PROMO50", "CLIENTEVIP"];
+let mensaje = "Código inválido o expirado.";
+function verificacionDelCodigo(codigo) {
+    if (codigosValidos.includes(codigo)) {
+        mensaje = "¡Éxito! Código aceptado."
+    } else {
+        mensaje = "Código inválido o expirado.";
+    };
+    return mensaje;
+};
+
+function verificarCodigo() {
+    const contenedor = document.getElementById("resultadoContenedor4");
+    const resultado1 = document.getElementById("resultado4");
+    const input = document.getElementById("input4");
+    input.value = input.value.trim();
+    if (input.value == "") {
+        alert("No puede estar vacío");
+    } else {
+        let resultado = verificacionDelCodigo(input.value);
+        input.value = "";
+        contenedor.classList.remove("escondido");
+        resultado1.textContent = resultado;
+    };
+};
+
+/*Ejercicio 5: Simulador de Cuotas
+Contexto: Un cliente compra un producto y el sistema le genera automáticamente las etiquetas para sus próximas 3 letras de pago.
+- Función Principal: Crea simularCuotas().
+- Captura el nombre del producto desde el input (ej: "Bicicleta").
+- Crea una variable vacía: registroPagos = "";
+- Crea un ciclo for que dé exactamente 3 vueltas (del 1 al 3).
+- En cada vuelta, súmale (+=) a registroPagos el producto y el número de la cuota (Ej: producto + " - Cuota " + i + " | ").
+- Fuera del ciclo, muestra la variable registroPagos en el textContent del párrafo.
+- Limpia el input.
+*/
+let registrosPagos = "";
+function cicloCuotas(producto) {
+    for (let i = 0; i < 3; i++) {
+        registrosPagos += `${producto} - Cuota ${i} | `;
+    };
+    return registrosPagos;
+};
+
+function simularCuotas() {
+    const contenedor = document.getElementById("resultadoContenedor5");
+    const resultado1 = document.getElementById("resultado5");
+    const input = document.getElementById("input5");
+    input.value = input.value.trim();
+    if (input.value == "") {
+        alert("No puede estar vacío.")
+    } else {
+        let resultado = cicloCuotas(input.value);
+        input.value = "";
+        contenedor.classList.remove("escondido");
+        resultado1.textContent = resultado;
+    };
+};
+
+/*Ejercicio 6: Filtro de Presupuesto
+Contexto: Una vitrina virtual tiene varios precios. El cliente ingresa cuánta plata tiene en el bolsillo, y el sistema le muestra solo los precios que le alcanza para pagar.
+- Crea un arreglo de precios: let vitrina = [2500, 15000, 8000, 30000, 5000];
+- Función Principal: Crea filtrarPrecios().
+- Captura el número desde el input (este será el presupuesto del cliente. Recuerda usar Number()).
+- Crea una variable opciones = "Te alcanza para los precios: ";
+- Recorre el arreglo vitrina con un for.
+- Dentro del ciclo, usa un if. Si el precio actual del arreglo es menor o igual (<=) a la plata que ingresó el cliente, súmalo a la variable opciones más un guion (-).
+- Muestra el resultado en el textContent del párrafo.
+- Limpia el input.*/
+let vitrina = [2500, 15000, 8000, 30000, 5000];
+let disponibles = [];
+let opciones = "Te alcanza para los precios: ";
+function verificarPrecio(presupuesto) {
+    for (let i = 0; i <= vitrina.length; i++) {
+        if (presupuesto >= vitrina[i]) {
+            disponibles.push(vitrina[i]);
+        };
+    };
+    if (disponibles.length == 0) {
+        opciones = "No te alcanza para nada.";
+        return opciones
+    } else {
+        opciones = "Te alcanza para los precios: ";
+        return opciones + disponibles.join(" - ");
+    };
+};
+
+function filtrarPrecios() {
+    const contenedor = document.getElementById("resultadoContenedor6");
+    const resultado1 = document.getElementById("resultado6");
+    const input = document.getElementById("input6");
+    input.value = input.value.trim();
+    let num = parseInt(input.value);
+    if (input.value == "") {
+        alert("No puede estar vacío.");
+    } else {
+        let resultado = verificarPrecio(num);
+        input.value = "";
+        contenedor.classList.remove("escondido");
+        resultado1.textContent = resultado;
+    };
+};

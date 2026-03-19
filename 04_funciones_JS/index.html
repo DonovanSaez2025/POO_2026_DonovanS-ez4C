@@ -51,9 +51,13 @@
                 <!-- Tarjeta 3 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 03: </h2>
-                    <span>Reordenando Números (Lógica de Índices)</span>
-                    <input id="input3" placeholder="Ingresa texto">
-                    <button class="tarjetaboton" onclick="reordenaNumeros()">Ejecutar</button>
+                    <span>Sistema de Delivery</span>
+                    <input id="input3" placeholder='"Despachar" o "Cancelar"'>
+                    <button class="tarjetaboton" onclick="gestionarPedidos()">Ejecutar</button>
+                    <div>
+                        <span>Entregas pendientes:</span>
+                        <div class="resultado-fondo" id="resultado3"></div>
+                    </div>
                 </div>
             </div>
 
@@ -62,19 +66,24 @@
                 <!-- Tarjeta 4 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 04: </h2>
-                    <span>Coordenadas en la Matriz (Suma Simple)</span>
-                    <input id="input4" placeholder="Ingresa texto">
-                    <button class="tarjetaboton" onclick="coordenadaMatriz()">Ejecutar</button>
-                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
+                    <span>Validador de Códigos de Descuento</span>
+                    <input id="input4" placeholder="Ingresa un código">
+                    <button class="tarjetaboton" onclick="verificarCodigo()">Ejecutar</button>
+                    <div class="escondido" id="resultadoContenedor4">
+                        <div class="resultado-fondo" id="resultado4"></div>
+                    </div>
                 </div>
 
                 <!-- Tarjeta 5 -->
                 <div class="tarjeta">
                     <h2>Ejercicio 05: </h2>
-                    <span>El Intruso en la Tercera Dimensión</span>
-                    <input id="input5" placeholder="Ingresa texto">
-                    <button class="tarjetaboton" onclick="intrusoDimension()">Ejecutar</button>
-                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
+                    <span>Simulador de Cuotas</span>
+                    <input id="input5" placeholder="Ingresar productos">
+                    <button class="tarjetaboton" onclick="simularCuotas()">Ejecutar</button>
+                    <div class="escondido" id="resultadoContenedor5">
+                        <span>Cuotas:</span>
+                        <div class="resultado-fondo" id="resultado5"></div>
+                    </div>
                 </div>
 
                 <!-- Tarjeta 6 -->
@@ -82,8 +91,11 @@
                     <h2>Ejercicio 06: </h2>
                     <span>Traductor de Acciones (Matriz + Arreglo)</span>
                     <input id="input6" placeholder="Ingresa texto">
-                    <button class="tarjetaboton" onclick="traductorAccion()">Ejecutar</button>
-                    <div class="escondido resultado"><span>Alumnos presentes:</span></div>
+                    <button class="tarjetaboton" onclick="filtrarPrecios()">Ejecutar</button>
+                    <div class="escondido" id="resultadoContenedor6">
+                        <span>Resultado:</span>
+                        <div class="resultado-fondo" id="resultado6"></div>
+                    </div>
                 </div>
             </div>
 
