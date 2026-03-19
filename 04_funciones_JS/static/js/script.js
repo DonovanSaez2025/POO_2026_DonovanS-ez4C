@@ -134,15 +134,16 @@ function verificarCodigo() {
 };
 
 /*Ejercicio 5: Simulador de Cuotas
-Contexto: Un cliente compra un producto y el sistema le genera automáticamente las etiquetas para sus próximas 3 letras de pago.
+Contexto: Un cliente compra un producto y
+el sistema le genera automáticamente las etiquetas para sus próximas 3 letras de pago.
 - Función Principal: Crea simularCuotas().
 - Captura el nombre del producto desde el input (ej: "Bicicleta").
 - Crea una variable vacía: registroPagos = "";
 - Crea un ciclo for que dé exactamente 3 vueltas (del 1 al 3).
 - En cada vuelta, súmale (+=) a registroPagos el producto y el número de la cuota (Ej: producto + " - Cuota " + i + " | ").
 - Fuera del ciclo, muestra la variable registroPagos en el textContent del párrafo.
-- Limpia el input.
-*/
+- Limpia el input.*/
+
 let registrosPagos = "";
 function cicloCuotas(producto) {
     for (let i = 0; i < 3; i++) {
@@ -279,5 +280,5 @@ function agregarAlCarrito() {
         actualizarPantalla();
     } else {
         alert(INVALIDO);
-    };
+    };                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 };
