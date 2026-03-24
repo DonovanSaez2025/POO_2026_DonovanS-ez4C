@@ -144,27 +144,26 @@ el sistema le genera automáticamente las etiquetas para sus próximas 3 letras 
 - Fuera del ciclo, muestra la variable registroPagos en el textContent del párrafo.
 - Limpia el input.*/
 
-let registrosPagos = "";
-function cicloCuotas(producto) {
-    for (let i = 0; i < 3; i++) {
-        registrosPagos += `${producto} - Cuota ${i} | `;
+function calcularCuotas(valor, cuota) {
+    let registroPagos = "";
+    for (let i = 1; i <= 3; i++) {
+        registroPagos += ` | Cuota ${i} de ${cuota}: ${parseInt(valor/3)} |`;
     };
-    return registrosPagos;
+    return registroPagos;
 };
 
 function simularCuotas() {
-    const contenedor = document.getElementById("resultadoContenedor5");
-    const resultado1 = document.getElementById("resultado5");
-    const input = document.getElementById("input5");
-    input.value = input.value.trim();
-    if (input.value == "") {
-        alert(INVALIDO)
-    } else {
-        let resultado = cicloCuotas(input.value);
-        input.value = "";
-        contenedor.classList.remove("escondido");
-        resultado1.textContent = resultado;
-    };
+    const producto = document.getElementById("input5_1");
+    let valorProducto = parseInt(producto.value);
+    const cuotaInput = document.getElementById("input5_2");
+    let cuota = parseInt(cuotaInput.value);
+    const result = document.getElementById("resultado5");
+    const container = document.getElementById("resultadoContenedor5");
+    let resultado = calcularCuotas(valorProducto, cuota);
+    result.textContent = resultado;
+    producto.value = "";
+    cuotaInput.value = "";
+    container.classList.remove("escondido");
 };
 
 /*Ejercicio 6: Filtro de Presupuesto
