@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Autor de la página -->
+    <meta name="author" content="donovansaez@liceovvh.cl">
+    <!-- Vínculo con CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Título de la página -->
+    <title>Ejercicios JS</title>
+</head>
+
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1>Ejercicios JS</h1>
+    </header>
+
+    <!-- Espacio para las tarjetas -->
+    <section class="espaciotarjetas">
+        <!-- Fila 1 -->
+        <div class="row">
+            <!-- Tarjeta 1 -->
+            <div class="tarjeta">
+                <h2>Ejercicio 01: </h2>
+                <span>Función con validación de datos</span>
+                <input id="input1" type="text" placeholder="Ingresa un número">
+                <button class="tarjetaboton" onclick="verificarNumero()">Verificar número</button>
+                <div class="escondido" id="resultadoContenedor1">
+                    <div class="resultado-fondo" id="resultado1"></div>
+                </div>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta">
+                <h2>Ejercicio 02: </h2>
+                <span>Función que usa condicional múltiple</span>
+                <input id="input2" type="text" placeholder="Ingresa un número">
+                <button class="tarjetaboton" onclick="evaluarNota()">Evaluar nota</button>
+                <div class="escondido" id="resultadoContenedor2">
+                    <div class="resultado-fondo" id="resultado2"></div>
+                </div>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="tarjeta">
+                <h2>Ejercicio 03: </h2>
+                <span>Uso de múltiples funciones</span>
+                <input id="input3" type="text" placeholder="Ingresa un número">
+                <button class="tarjetaboton" onclick="procesarNumero()">Evaluar nota</button>
+                <div class="escondido" id="resultadoContenedor3">
+                    <div class="resultado-fondo" id="resultado3"></div>
+                </div>
+            </div>
+            <!-- Tarjeta 4 -->
+            <div class="tarjeta">
+                <h2>Ejercicio 04: </h2>
+                <span>Función que transforma texto</span>
+                <input id="input4" type="text" placeholder="Ingresa un texto">
+                <button class="tarjetaboton" onclick="transformarTexto()">Transformar a mayúscula</button>
+                <div class="escondido" id="resultadoContenedor4">
+                    <div class="resultado-fondo" id="resultado4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Vínculo con JS -->
+    <script src="static/js/script.js"></script>
+</body>
+
+</html>
